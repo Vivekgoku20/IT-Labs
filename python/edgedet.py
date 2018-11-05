@@ -2,14 +2,11 @@ e=[[0 for i in range(100)] for j in range(0,100)]
 visited=[0 for i in range(0,100)]
 time=0
 ts=[-1 for i in range(100)]
-pred=[-1 for i in range(100)]
-k=0
 level=[0 for i in range(100)]
 te=[-1 for i in range(100)]
 dfsp=[]
 def dfs(u,l):
     global time
-    global k
     if(visited[u]==0):
         ts[u] = time
         time = time + 1
@@ -21,24 +18,15 @@ def dfs(u,l):
     for i in range(0,int(n)):
         if(e[u][i]==1):
             if(visited[i]==0):
-            	pred[i]=u
             	print(u," ",i," tree egde")
-            	k=k+1
             	level[i]=l+1
             	dfs(i,l+1)
             elif((te[i]==-1) and (ts[i]!=-1)):
-                print(u," ",i," ","back edge")
+                print(u," ",i," back edge")
             else:
-            	k=pred[i]
-            	po=0
-            	while(k!=-1):
-            		if(k==u):
-            			print(u," ",i," front edge")
-            			po=1
-            			break;
-            		else:
-            			k=pred[k]
-            	if(po==0):
+            	if(ts[i]>ts[u]):
+            		print(u," ",i," front edge")
+            	else:
             		print(u," ",i," cross edge")	
     te[u]=time
     time=time+1
@@ -74,7 +62,7 @@ def main():
         #for j in range(0,int(n)):
             #if(e[i][j]==1):
                 #if(level[i]==level[j])
-    print("Levels of dfs tree")
+    print("Levels of dfs tree of each vertex")
     for i in range(0,int(n)):
         print(level[i])
     '''for i in range(0,i,nt(n)):
