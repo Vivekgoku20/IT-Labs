@@ -1,2 +1,2 @@
-The edgeset python file contains the python code which implements directed dfs and also prints the edges after classifying them as,
-Front edge,tree edge,cross edge and back edge.
+The edgeset python file contains the python code which implements directed dfs,prints the edges after classifying them as,
+Front edge,tree edge,cross edge and back edge and the time stamps of each vertex along with the levels of each vertex in the dfs tree.
