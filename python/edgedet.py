@@ -65,25 +65,6 @@ def main():
     print("Levels of dfs tree of each vertex")
     for i in range(0,int(n)):
         print(level[i])
-    '''for i in range(0,i,nt(n)):
-        if visited[i]==0:
-            q.append(i)
-            visited[i]=1
-            count=count+1
-            print("Component ",count)
-            print(i)
-        while q:
-            x=q.pop(0)
-            if(visited[x]==0):
-                visited[x]=1
-            for i in range(0,int(n)):
-                if(e[x][i]==1):
-                    if(visited[i]==0):
-                        print(i)
-                        visited[i]=1
-                        q.append(i)
-    print("Total number of components")
-    print(count)'''
 if __name__=='__main__':
     main()
 
